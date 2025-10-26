@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Class-based dark mode for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply transition-colors duration-300;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500 dark:bg-gray-500;
+  }
+}
+
+@layer components {
+  .code-editor {
+    @apply font-mono bg-gray-900 rounded-lg p-4 my-4;
+  }
+
+  .streak-fire {
+    animation: pulse 1.5s infinite;
+  }
+
+  .animate-shake-pulse {
+    animation: shake-pulse 0.6s ease-in-out 5;
+  }
+
+  @keyframes shake-pulse {
+    0%, 100% {
+      transform: scale(1) translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: scale(1.05) translateX(-2px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: scale(1.05) translateX(2px);
+    }
+  }
+}
