@@ -258,13 +258,13 @@ backend/
    - Choose "Connect your application"
    - Copy connection string
    - Replace `<password>` with your actual password
-   - Example: `mongodb+srv://jsTrainingAdmin:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/jsTrainingApp?retryWrites=true&w=majority`
+   - Example: `mongodb+srv://USERNAME:PASSWORD@cluster0.xxxxx.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority`
 
 #### Step 3: Environment Variables Setup
 Create `backend/.env`:
 ```env
 # Database
-MONGODB_URI=mongodb+srv://jsTrainingAdmin:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/jsTrainingApp?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@cluster0.xxxxx.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority
 
 # Server
 PORT=5000
