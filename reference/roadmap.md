@@ -256,25 +256,25 @@ backend/
 3. **Get Connection String**:
    - Click "Connect" on your cluster
    - Choose "Connect your application"
-   - Copy connection string
-   - Replace `<password>` with your actual password
-   - Example: `mongodb+srv://USERNAME:PASSWORD@cluster0.xxxxx.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority`
+   - Copy connection string (MongoDB Atlas will provide the full URI)
+   - Replace `<password>` placeholder with your actual password
+   - The format will be: `mongodb+srv://<username>:<password>@<cluster-url>/<database>?options`
 
 #### Step 3: Environment Variables Setup
 Create `backend/.env`:
 ```env
-# Database
-MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@cluster0.xxxxx.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority
+# Database (get from MongoDB Atlas)
+MONGODB_URI=<your-mongodb-atlas-connection-string>
 
 # Server
 PORT=5000
 NODE_ENV=development
 
 # Anthropic API (get from console.anthropic.com)
-ANTHROPIC_API_KEY=sk-ant-xxxxx
+ANTHROPIC_API_KEY=<your-anthropic-api-key>
 
 # JWT (generate random string)
-JWT_SECRET=your-super-secret-jwt-key-change-this
+JWT_SECRET=<your-generated-secret-key>
 
 # Frontend URL (for CORS)
 FRONTEND_URL=http://localhost:5173
@@ -282,11 +282,11 @@ FRONTEND_URL=http://localhost:5173
 
 Create `backend/.env.example` (for version control):
 ```env
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/dbname
+MONGODB_URI=<mongodb-atlas-uri-here>
 PORT=5000
 NODE_ENV=development
-ANTHROPIC_API_KEY=sk-ant-xxxxx
-JWT_SECRET=your-secret-key
+ANTHROPIC_API_KEY=<your-key-here>
+JWT_SECRET=<your-secret-here>
 FRONTEND_URL=http://localhost:5173
 ```
 
